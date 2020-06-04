@@ -54,6 +54,7 @@ const newWin = () => {
       .on('error', pollServer)
   }
   pollServer()
+  win.webContents.openDevTools()
 }
 
 app.on('ready', newWin)
