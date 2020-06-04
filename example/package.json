@@ -8,6 +8,7 @@
     "dev": "nuxt",
     "dev-electron": "NODE_ENV=dev electron main.js",
     "build": "nuxt build",
+    "electron-builder": "BASE_DIR=./ NODE_ENV=production npm run build && electron-builder -w -m --x64",
     "start": "nuxt start",
     "generate": "nuxt generate",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
@@ -47,5 +48,12 @@
     "stylelint": "^10.1.0",
     "ts-jest": "^25.0.0",
     "vue-jest": "^4.0.0-0"
+  },
+  "main": "main.js",
+  "build": {
+    "appId": "example",
+    "directories": {
+      "output": "build"
+    }
   }
 }
