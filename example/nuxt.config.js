@@ -1,4 +1,6 @@
-export default {
+const baseDir = process.env.BASE_DIR || '/'
+
+module.exports = { // eslint-disable-line
   mode: 'spa',
   /*
    ** Headers of the page
@@ -51,5 +53,11 @@ export default {
      ** You can extend webpack config here
      */
     extend(config, ctx) {} // eslint-disable-line
+  },
+  // dev mode
+  dev: process.env.NODE_ENV === 'dev',
+  router: {
+    base: baseDir,
+    mode: 'hash'
   }
 }
