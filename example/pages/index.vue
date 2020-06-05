@@ -33,7 +33,9 @@
       </div>
     </section>
     <section class="section">
-      <b-button @click="outputLog">LOG</b-button>
+      <b-button @click="outputLog">
+        LOG: {{ path }}
+      </b-button>
     </section>
   </div>
 </template>
@@ -59,6 +61,12 @@ export default {
 
   components: {
     Card
+  },
+
+  data() {
+    return {
+      path: window.electron.logPath
+    }
   },
 
   methods: {
