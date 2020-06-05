@@ -35,6 +35,7 @@ const newWin = () => {
       preload: path.resolve(path.join(__dirname, 'preload.js'))
     }
   })
+  win.setMenu(null)
   win.on('closed', () => (win = null))
   if (!config.dev) {
     win.loadURL(NUXT_URL)
