@@ -164,7 +164,7 @@ Add [main.js](./example/main.js)
      "dev": "nuxt",
      "dev-electron": "NODE_ENV=dev electron main.js",
      "build": "nuxt build",
-+    "electron-builder": "BASE_DIR=./ NODE_ENV=production npm run build && electron-builder -w -m --x64",
++    "electron-builder": "BASE_DIR=./ NODE_ENV=production npm run build && electron-builder -w portable -m --x64",
      "start": "nuxt start",
      "generate": "nuxt generate",
      "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
