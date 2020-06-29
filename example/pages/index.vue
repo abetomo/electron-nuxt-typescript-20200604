@@ -32,10 +32,12 @@
         </card>
       </div>
     </section>
+
     <section class="section">
       <b-button @click="outputLog">
-        LOG: {{ path }}
+        output log
       </b-button>
+      <b-message type="is-info"> log file: {{ path }} </b-message>
     </section>
   </div>
 </template>
