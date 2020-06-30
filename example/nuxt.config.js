@@ -46,7 +46,8 @@ module.exports = { // eslint-disable-line
       // Doc: https://buefy.github.io/#/documentation
       'nuxt-buefy',
       {
-        materialDesignIconsHRef: 'https://cdn.materialdesignicons.com/5.0.45/css/materialdesignicons.min.css'
+        materialDesignIconsHRef:
+          'https://cdn.materialdesignicons.com/5.0.45/css/materialdesignicons.min.css'
       }
     ]
   ],

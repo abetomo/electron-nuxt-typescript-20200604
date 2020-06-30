@@ -37,12 +37,23 @@
       <b-button @click="outputLog">
         output log
       </b-button>
-      <b-message type="is-info"> log file: {{ path }} </b-message>
+      <b-message type="is-info"> log file: {{ logPath }} </b-message>
+    </section>
+
+    <section class="section">
+      <b-button @click="openDialog">
+        dialog example: openDirectory
+      </b-button>
+
+      <b-message v-if="directoryName.length > 0" type="is-info">
+        {{ directoryName }}
+      </b-message>
     </section>
   </div>
 </template>
 
 <script lang="ts">
+import Vue from 'vue'
 import Card from '~/components/Card.vue'
 
 declare global {
@@ -51,6 +62,9 @@ declare global {
       remote: {
         require: Function
       }
+      ipcRenderer: {
+        sendSync: Function
+      }
       logPath: string
     }
   }
@@ -58,7 +72,7 @@ declare global {
 
 const fs = window.electron.remote.require('fs')
 
-export default {
+export default Vue.extend({
   name: 'HomePage',
 
   components: {
@@ -67,14 +81,27 @@ export default {
 
   data() {
     return {
-      path: window.electron.logPath
+      logPath: window.electron.logPath,
+      directoryName: ''
     }
   },
 
   methods: {
     outputLog() {
       fs.appendFileSync(window.electron.logPath, Date.now() + '\n')
+    },
+
+    openDialog() {
+      const options = {
+        properties: ['createDirectory', 'openDirectory']
+      }
+      const paths = window.electron.ipcRenderer.sendSync('open-dialog', options)
+      if (paths != null && paths.length > 0) {
+        this.directoryName = paths[0]
+      } else {
+        this.directoryName = '<undefined>'
+      }
     }
   }
-}
+})
 </script>

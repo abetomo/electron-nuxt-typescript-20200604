@@ -1,5 +1,5 @@
 const path = require('path')
-const { contextBridge, app, remote } = require('electron')
+const { contextBridge, app, ipcRenderer, remote } = require('electron')
 
 const userDataPath = (() => {
   try {
@@ -13,5 +13,6 @@ const userDataPath = (() => {
 
 contextBridge.exposeInMainWorld('electron', {
   logPath: path.join(userDataPath, 'log.txt'),
+  ipcRenderer,
   remote
 })

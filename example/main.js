@@ -1,7 +1,7 @@
 const http = require('http')
 const path = require('path')
 const { Nuxt, Builder } = require('nuxt')
-const electron = require('electron')
+const { app, dialog, ipcMain, BrowserWindow } = require('electron')
 
 const config = require('./nuxt.config.js')
 const nuxt = new Nuxt(config)
@@ -23,10 +23,11 @@ if (config.dev) {
 }
 
 // Electron
-const app = electron.app
-const BrowserWindow = electron.BrowserWindow
-let win = null
+ipcMain.on('open-dialog', (event, options) => {
+  event.returnValue = dialog.showOpenDialogSync(options)
+})
 
+let win = null
 const newWin = () => {
   win = new BrowserWindow({
     webPreferences: {
