@@ -129,11 +129,11 @@ Add [main.js](./example/main.js)
 ```diff
 --- a/package.json
 +++ b/package.json
-@@ -6,6 +6,7 @@
    "private": true,
    "scripts": {
-     "dev": "nuxt",
-+    "dev-electron": "NODE_ENV=dev electron main.js",
+-    "dev": "nuxt",
+-    "dev-electron": "NODE_ENV=dev electron main.js",
++    "dev": "NODE_ENV=dev electron main.js",
      "build": "nuxt build",
      "start": "nuxt start",
      "generate": "nuxt generate",

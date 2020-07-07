@@ -5,8 +5,7 @@
   "author": "abetomo",
   "private": true,
   "scripts": {
-    "dev": "nuxt",
-    "dev-electron": "NODE_ENV=dev electron main.js",
+    "dev": "NODE_ENV=dev electron main.js",
     "build": "nuxt build",
     "electron-builder": "BASE_DIR=./ NODE_ENV=production npm run build && electron-builder -w portable -m --x64",
     "start": "nuxt start",
