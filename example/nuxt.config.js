@@ -65,5 +65,7 @@ module.exports = { // eslint-disable-line
   router: {
     base: baseDir,
     mode: 'hash'
-  }
+  },
+  // nuxt/telemetry#opting-out
+  telemetry: false
 }
