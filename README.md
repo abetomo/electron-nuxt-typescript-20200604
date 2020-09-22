@@ -132,7 +132,6 @@ Add [main.js](./example/main.js)
    "private": true,
    "scripts": {
 -    "dev": "nuxt",
--    "dev-electron": "NODE_ENV=dev electron main.js",
 +    "dev": "NODE_ENV=dev electron main.js",
      "build": "nuxt build",
      "start": "nuxt start",
@@ -160,15 +159,14 @@ Add [main.js](./example/main.js)
 ```diff
 --- a/package.json
 +++ b/package.json
-@@ -8,6 +8,7 @@
-     "dev": "nuxt",
-     "dev-electron": "NODE_ENV=dev electron main.js",
+@@
+     "dev": "NODE_ENV=dev electron main.js",
      "build": "nuxt build",
 +    "electron-builder": "BASE_DIR=./ NODE_ENV=production npm run build && electron-builder -w portable -m --x64",
      "start": "nuxt start",
      "generate": "nuxt generate",
      "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
-@@ -47,5 +48,12 @@
+@@
      "stylelint": "^10.1.0",
      "ts-jest": "^25.0.0",
      "vue-jest": "^4.0.0-0"
