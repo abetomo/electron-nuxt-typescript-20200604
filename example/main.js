@@ -31,6 +31,7 @@ let win = null
 const newWin = () => {
   win = new BrowserWindow({
     webPreferences: {
+      enableRemoteModule: true,
       nodeIntegration: false,
       contextIsolation: true,
       preload: path.resolve(path.join(__dirname, 'preload.js'))

@@ -179,3 +179,8 @@ Add [main.js](./example/main.js)
 +    }
    }
 ```
+
+## Added on 2020/12/19
+
+Breaking Changes
+https://www.electronjs.org/docs/breaking-changes#breaking-changes
