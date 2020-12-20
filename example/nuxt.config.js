@@ -1,7 +1,7 @@
 const baseDir = process.env.BASE_DIR || '/'
 
 module.exports = { // eslint-disable-line
-  mode: 'spa',
+  ssr: false,
   /*
    ** Headers of the page
    */
