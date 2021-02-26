@@ -174,6 +174,12 @@ Add [main.js](./example/main.js)
 +  "main": "main.js",
 +  "build": {
 +    "appId": "example",
++    "files": [
++      "dist/",
++      "main.js",
++      "nuxt.config.js",
++      "preload.js"
++    ],
 +    "directories": {
 +      "output": "build"
 +    }
