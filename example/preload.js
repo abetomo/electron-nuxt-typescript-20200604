@@ -14,5 +14,5 @@ const userDataPath = (() => {
 contextBridge.exposeInMainWorld('electron', {
   logPath: path.join(userDataPath, 'log.txt'),
   ipcRenderer,
-  remote
+  remote,
 })

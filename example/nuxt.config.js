@@ -13,10 +13,10 @@ module.exports = { // eslint-disable-line
       {
         hid: 'description',
         name: 'description',
-        content: process.env.npm_package_description || ''
-      }
+        content: process.env.npm_package_description || '',
+      },
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
   /*
    ** Customize the progress-bar color
@@ -36,7 +36,7 @@ module.exports = { // eslint-disable-line
   buildModules: [
     '@nuxt/typescript-build',
     // Doc: https://github.com/nuxt-community/stylelint-module
-    '@nuxtjs/stylelint-module'
+    '@nuxtjs/stylelint-module',
   ],
   /*
    ** Nuxt.js modules
@@ -47,9 +47,9 @@ module.exports = { // eslint-disable-line
       'nuxt-buefy',
       {
         materialDesignIconsHRef:
-          'https://cdn.materialdesignicons.com/5.0.45/css/materialdesignicons.min.css'
-      }
-    ]
+          'https://cdn.materialdesignicons.com/5.0.45/css/materialdesignicons.min.css',
+      },
+    ],
   ],
   /*
    ** Build configuration
@@ -64,8 +64,8 @@ module.exports = { // eslint-disable-line
   dev: process.env.NODE_ENV === 'dev',
   router: {
     base: baseDir,
-    mode: 'hash'
+    mode: 'hash',
   },
   // nuxt/telemetry#opting-out
-  telemetry: false
+  telemetry: false,
 }

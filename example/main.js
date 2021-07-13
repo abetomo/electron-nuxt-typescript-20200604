@@ -34,8 +34,8 @@ const newWin = () => {
       enableRemoteModule: true,
       nodeIntegration: false,
       contextIsolation: true,
-      preload: path.resolve(path.join(__dirname, 'preload.js'))
-    }
+      preload: path.resolve(path.join(__dirname, 'preload.js')),
+    },
   })
   win.setMenu(null)
   win.on('closed', () => (win = null))
