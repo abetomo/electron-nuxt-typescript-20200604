@@ -51,7 +51,6 @@
     "files": [
       "dist/",
       "main.js",
-      "nuxt.config.js",
       "preload.js"
     ],
     "directories": {
