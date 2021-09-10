@@ -29,14 +29,16 @@ ipcMain.on('open-dialog', (event, options) => {
   event.returnValue = dialog.showOpenDialogSync(options)
 })
 
+ipcMain.on('log-path', (event) => {
+  event.returnValue = path.join(app.getPath('userData'), 'log.txt')
+})
+
 let win = null
 const newWin = () => {
   win = new BrowserWindow({
     webPreferences: {
-      enableRemoteModule: true,
-      nodeIntegration: false,
-      contextIsolation: true,
       preload: path.resolve(path.join(__dirname, 'preload.js')),
+      nativeWindowOpen: true, // https://github.com/electron/electron/issues/28511
     },
   })
   win.setMenu(null)

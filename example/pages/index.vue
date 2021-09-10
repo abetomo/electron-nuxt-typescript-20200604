@@ -47,18 +47,16 @@ import Card from '~/components/Card.vue'
 declare global {
   interface Window {
     electron: {
-      remote: {
-        require: Function
-      }
+      fs: any
       ipcRenderer: {
         sendSync: Function
       }
-      logPath: string
     }
   }
 }
 
-const fs = window.electron.remote.require('fs')
+const fs = window.electron.fs
+const logPath = window.electron.ipcRenderer.sendSync('log-path')
 
 export default Vue.extend({
   name: 'HomePage',
@@ -69,14 +67,14 @@ export default Vue.extend({
 
   data() {
     return {
-      logPath: window.electron.logPath,
+      logPath,
       directoryName: '',
     }
   },
 
   methods: {
     outputLog() {
-      fs.appendFileSync(window.electron.logPath, Date.now() + '\n')
+      fs.appendFileSync(logPath, Date.now() + '\n')
     },
 
     openDialog() {
