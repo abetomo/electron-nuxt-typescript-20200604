@@ -37,6 +37,7 @@ let win = null
 const newWin = () => {
   win = new BrowserWindow({
     webPreferences: {
+      nodeIntegration: true,
       preload: path.resolve(path.join(__dirname, 'preload.js')),
       nativeWindowOpen: true, // https://github.com/electron/electron/issues/28511
     },
