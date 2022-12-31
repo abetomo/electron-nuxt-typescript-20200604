@@ -43,7 +43,7 @@
     "prettier": "^2.3.2",
     "stylelint": "^13.13.1",
     "ts-jest": "^27.0.3",
-    "vue-jest": "^3.0.7"
+    "vue-jest": "^4.0.1"
   },
   "main": "main.js",
   "build": {
@@ -58,7 +58,7 @@
     }
   },
   "dependencies": {
-    "nuxt": "^2.15.7",
+    "nuxt": "^3.0.0",
     "nuxt-buefy": "^0.4.8"
   }
 }
